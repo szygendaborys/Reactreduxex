@@ -50,8 +50,3 @@ const mapDispatchToProps = (dispatch) => {  // dispatch actions to all props
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-
-// PAUSED AT 37:13 come back later
-// PAUSED AT 37:13 come back later
-// PAUSED AT 37:13 come back later

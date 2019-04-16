@@ -1,28 +1,57 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './scss/App.scss';
+import { connect } from 'react-redux';
+
+import History from './components/History';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        Simple redux App
+        <div>
+          Age: <span>{this.props.age}</span> </div>
+        <div>
+        <button onClick={this.props.onAgeUp}>Age UP</button>
+        <button onClick={this.props.onAgeDown}>Age DOWN</button>
+        </div>
+        <hr/>
+
+        <div>
+          <h2>History of changes:</h2>
+          <br/>
+          <History />
+        </div>
+
+
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    age:state.age,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {  // dispatch actions to all props
+  return {
+    onAgeUp: () => dispatch({
+      type:'AGE_UP',
+      value:1
+    }),
+    onAgeDown: () => dispatch({
+      type:'AGE_DOWN',
+      value:1
+    })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
+// PAUSED AT 37:13 come back later
+// PAUSED AT 37:13 come back later
+// PAUSED AT 37:13 come back later

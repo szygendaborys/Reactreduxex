@@ -1,0 +1,28 @@
+.counter-wrapper {
+    padding:3rem;
+    width:300px;
+    border:2px solid black;
+
+    h3 {
+        font-size:3rem;
+        margin-top:0;
+    }
+
+    .comps {
+        font-size:2rem;
+        margin-top:3rem;
+        display:flex;
+        justify-content: space-between;
+        
+        button {
+            background-color:gray;
+            border: 1px solid black;
+            width:40px;
+            font-size:2rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
